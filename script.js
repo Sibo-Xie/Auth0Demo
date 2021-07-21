@@ -63,7 +63,8 @@ const updateUI = async () => {
     document.getElementById("ipt-user-profile-image").src = profile.picture;
     
     //ログイン所在国
-    document.getElementById("ipt-user-profile-country").innerHTML = profile[1];
+    const strCountryVarName = "https://example.com/country";
+    document.getElementById("ipt-user-profile-country").innerHTML = profile[strCountryVarName];
 
   } else {
     document.getElementById("gated-content").classList.add("hidden");
