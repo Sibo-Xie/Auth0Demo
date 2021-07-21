@@ -63,7 +63,7 @@ const updateUI = async () => {
     document.getElementById("ipt-user-profile-image").src = profile.picture;
     
     //ログイン所在国
-    const strCountryVarName = "https://example.com/country_name";
+    const strCountryVarName = "https://example.com/country";
     document.getElementById("ipt-user-profile-country").innerHTML = profile[strCountryVarName];
 
   } else {
