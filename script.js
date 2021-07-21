@@ -64,7 +64,8 @@ const updateUI = async () => {
     
     //ログイン所在国
     const strCountryVarName = "https://example.com/country";
-    document.getElementById("ipt-user-profile-country").src = "https://www.countryflags.io/" + arrayCountryCode[profile[strCountryVarName].toUpperCase()] + "/flat/64.png";
+    const strCountryNameUpperCase = profile[strCountryVarName].toUpperCase();
+    document.getElementById("ipt-user-profile-country").src = "https://www.countryflags.io/" + arrayCountryCode[strCountryNameUpperCase] + "/flat/64.png";
 
   } else {
     document.getElementById("gated-content").classList.add("hidden");
