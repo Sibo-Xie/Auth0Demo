@@ -52,9 +52,7 @@ const updateUI = async () => {
 
     const strAccessToken = await auth0.getTokenSilently();
 
-    document.getElementById(
-      "ipt-access-token"
-    ).innerHTML = strAccessToken;
+    document.getElementById("ipt-access-token").innerHTML = strAccessToken;
 
     document.getElementById("ipt-user-profile").innerHTML = JSON.stringify(
       await auth0.getUser()
@@ -62,8 +60,10 @@ const updateUI = async () => {
 
     //プロフ画像
     const profile = await auth0.getUser();
-    document.getElementById("ipt-user-profile-image1").src = profile.picture;
-    document.getElementById("ipt-user-profile-image2").src = profile.identities[2].profileData.picture;
+    document.getElementById("ipt-user-profile-image").src = profile.picture;
+    
+    //ログイン所在国
+    document.getElementById("ipt-access-token").innerHTML = profile["https://example.com/country_name"];
 
   } else {
     document.getElementById("gated-content").classList.add("hidden");
